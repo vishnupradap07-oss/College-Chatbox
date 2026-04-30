@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPRIET - KPR Institute of Engineering and Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <h1><i class="fas fa-graduation-cap"></i> KPRIET</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#placements">Placements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main College Page Content -->
+    <div class="main-content">
+        
+        <!-- Home Section -->
+        <section id="home" class="hero section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Welcome to KPRIET</h2>
+                <p>Empowering students to innovate and excel in the modern technological era. Building leaders of tomorrow.</p>
+                <a href="#about" class="explore-btn">Explore Campus</a>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="content-section section">
+            <div class="container">
+                <h2 class="section-title">About Our College</h2>
+                <div class="grid-2">
+                    <div class="text-content">
+                        <h3>Vision & Mission</h3>
+                        <p>Our vision is to be a globally recognized institution for engineering education, research, and innovation. We aim to nurture future-ready professionals who contribute positively to society.</p>
+                        <ul class="highlights-list">
+                            <li><i class="fas fa-check-circle"></i> NAAC A++ Accredited</li>
+                            <li><i class="fas fa-check-circle"></i> Autonomous Institution</li>
+                            <li><i class="fas fa-check-circle"></i> Industry-driven Curriculum</li>
+                        </ul>
+                    </div>
+                    <div class="image-content glass-box">
+                        <i class="fas fa-university fa-5x"></i>
+                        <p>Excellence in Education since 2009</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academics Section -->
+        <section id="academics" class="content-section section bg-light">
+            <div class="container">
+                <h2 class="section-title">Academics & Departments</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Computer Science</h3>
+                        <p>Specializations in AI, Data Science, Cyber Security, and Business Systems.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Mechanical & Core</h3>
+                        <p>State-of-the-art labs for Mechanical, Civil, and Chemical Engineering.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Electronics & Comm.</h3>
+                        <p>Advanced circuits, robotics, and communication network facilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admissions Section -->
+        <section id="admissions" class="content-section section">
+            <div class="container">
+                <h2 class="section-title">Admissions</h2>
+                <div class="grid-2">
+                    <div class="glass-box">
+                        <h3>Admission Process</h3>
+                        <p>Admissions are open for the current academic year. We offer multiple streams across cutting-edge technologies. Selection is based on merit and entrance examinations.</p>
+                        <p><strong>Eligibility:</strong> 10+2 with Physics, Chemistry, and Mathematics.</p>
+                    </div>
+                    <div class="glass-box">
+                        <h3>Cutoff Information</h3>
+                        <p>Cutoff marks vary by department. Use our chatbot in the bottom right corner to quickly check the required cutoff for your desired department!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placements Section -->
+        <section id="placements" class="content-section section bg-light">
+            <div class="container">
+                <h2 class="section-title">Placements & Training</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h2>98%</h2>
+                        <p>Placement Record</p>
+                    </div>
+                    <div class="stat-box">
+                        <h2>12 LPA</h2>
+                        <p>Highest Package</p>
+                    </div>
+                    <div class="stat-box">
+                        <h2>200+</h2>
+                        <p>Top Recruiters</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 KPR Institute of Engineering and Technology. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- Chatbot Widget Toggle Button -->
+    <button id="chatbot-toggle-btn" class="chat-toggle-btn">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <!-- Chatbot Window Container -->
+    <div id="chatbot-window" class="chatbot-window hidden glass-container">
+        
+        <!-- Unified Header -->
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <h4><i class="fas fa-robot"></i> KPRIET Bot</h4>
+                <p id="user-info-display">Welcome!</p>
+            </div>
+            <div>
+                <button id="restart-btn" title="Restart"><i class="fas fa-sync-alt"></i></button>
+                <button id="close-chat-btn" title="Close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <!-- Onboarding Flow -->
+        <div id="onboarding-section">
+            <div class="input-group">
+                <label for="department">Select Department</label>
+                <select id="department">
+                    <option value="" disabled selected>Choose...</option>
+                    {% for dept, cutoff in departments.items() %}
+                        <option value="{{ dept }}" data-cutoff="{{ cutoff }}">{{ dept }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div id="cutoff-display" class="hidden glass-card">
+                <p>Cutoff: <span id="cutoff-value" class="highlight"></span></p>
+            </div>
+            
+            <div id="name-section" class="hidden">
+                <div class="input-group">
+                    <label for="user-name">Your Name</label>
+                    <input type="text" id="user-name" placeholder="E.g., John Doe" autocomplete="off">
+                </div>
+                <button id="start-chat-btn" class="primary-btn">Start Chat</button>
+            </div>
+            
+            <div id="onboarding-error" class="error-msg"></div>
+        </div>
+
+        <!-- Chat Interface -->
+        <div id="chat-section" class="hidden flex-column">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be appended here -->
+                <div class="typing-indicator hidden" id="typing-indicator">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pass department data securely -->
+    <script>
+        const departmentsData = {{ departments|tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
